@@ -65,6 +65,12 @@
 
     myImage.setAttribute('src', 'static/coffee_beans.jpg');
 
+    function makeCoffee(evt) {
+        oldSrc = myImage.getAttribute('src');
+        myImage.setAttribute('src', 'static/coffee_mug.jpg');
+    };
+
+    myImage.addEventListener('click', makeCoffee);
 
 </script>
 
