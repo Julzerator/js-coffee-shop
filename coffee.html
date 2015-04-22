@@ -63,7 +63,7 @@
         "brew": 2.05,
         "espresso": 3.25,
         "latte": 4.15,
-        "hot chocolate": 2.50
+        "hot-chocolate": 2.50
     };
 
     // working code
@@ -78,6 +78,15 @@
         myImage.setAttribute('src', 'static/coffee_beans.jpg'); 
     };
 
+    function revenue(drinksOrdered) {
+        var total = 0;
+        for (var i = 0; i < drinksOrdered.length; i++) {
+            total = total + prices[drinksOrdered[i]];
+
+        };
+        return total;
+    };
+
     function makeCoffee(drinkType) {
         drinksOrdered.push(drinkType);
         console.log(drinksOrdered);
@@ -85,16 +94,21 @@
         myImage.setAttribute('src', 'static/coffee_machine.jpg');
         setTimeout(pourCoffee, 1000);
         setTimeout(backToBeans, 2500);
+
+        myRevenueMessage.innerText = "$" + revenue(drinksOrdered).toFixed(2);
     };
 
     
     myImage.addEventListener('click', function () { return makeCoffee('brew'); });
 
-    espressoButton.addEventListener('click', function () { return makeCoffee('espresso'); })
+    espressoButton.addEventListener('click', function () { return makeCoffee('espresso'); });
 
-    latteButton.addEventListener('click', function () { return makeCoffee('latte'); })
+    latteButton.addEventListener('click', function () { return makeCoffee('latte'); });
 
-    hotChocolateButton.addEventListener('click', function () { return makeCoffee('hot-chocolate'); })
+    hotChocolateButton.addEventListener('click', function () { return makeCoffee('hot-chocolate'); });
+
+
+
 
 </script>
 
