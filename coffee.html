@@ -49,6 +49,9 @@
 
     var myImage = document.getElementById("coffee_image");
     var myRevenueMessage = document.getElementById("revenue");
+    var espressoButton = document.getElementById("espresso");
+    var latteButton = document.getElementById("latte");
+    var hotChocolateButton = document.getElementById("hot-chocolate");
 
     var oldSrc = myImage.getAttribute('src'); 
 
@@ -86,6 +89,12 @@
 
     
     myImage.addEventListener('click', function () { return makeCoffee('brew'); });
+
+    espressoButton.addEventListener('click', function () { return makeCoffee('espresso'); })
+
+    latteButton.addEventListener('click', function () { return makeCoffee('latte'); })
+
+    hotChocolateButton.addEventListener('click', function () { return makeCoffee('hot-chocolate'); })
 
 </script>
 
