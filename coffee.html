@@ -50,7 +50,9 @@
     var myImage = document.getElementById("coffee_image");
     var myRevenueMessage = document.getElementById("revenue");
 
-    var oldSrc = myImage.getAttribute('src');  
+    var oldSrc = myImage.getAttribute('src'); 
+
+    var drinksOrdered = []; 
 
     // use this dictionary in further study step
 
@@ -73,16 +75,17 @@
         myImage.setAttribute('src', 'static/coffee_beans.jpg'); 
     };
 
-    function makeCoffee(evt) {
-        oldSrc = myImage.getAttribute('src');
+    function makeCoffee(drinkType) {
+        drinksOrdered.push(drinkType);
+        console.log(drinksOrdered);
+
         myImage.setAttribute('src', 'static/coffee_machine.jpg');
         setTimeout(pourCoffee, 1000);
         setTimeout(backToBeans, 2500);
     };
 
     
-
-    myImage.addEventListener('click', makeCoffee);
+    myImage.addEventListener('click', function () { return makeCoffee('brew'); });
 
 </script>
 
